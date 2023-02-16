@@ -1,0 +1,147 @@
+:root,
+	:root.theme-1{
+		--main-bg: #3A4764;
+		--second-bg: #232C43;
+		--screen-bg: #182034;
+
+		--key-clear-bg: #637097;
+		--key-clear-shadow: #404E72;
+		--key-clear-bg-hover: #A2B3E1;
+
+		--key-equal-bg: #D03F2F;
+		--key-equal-shadow: #93261A;
+		--key-equal-bg-hover: #F96C5B;
+
+		--key-bg: #EAE3DC;
+		--key-shadow: #b4a597;
+		--key-bg-hover: #FFFFFD;
+
+		--text-primary: #FFFFFF;
+		--text-button: #444B5A;
+		--text-secondary-button: #FFFFFF;
+		--text-equal-button: #FFFFFF;
+	}
+	:root.theme-2{
+		--main-bg: #E6E6E6;
+		--second-bg: #D1CCCC;
+		--screen-bg: #EDEDED;
+
+		--key-clear-bg: #377F86;
+		--key-clear-shadow: #1B5F65;
+		--key-clear-bg-hover: #62B5BD;
+
+		--key-equal-bg: #CA5502;
+		--key-equal-shadow: #893901;
+		--key-equal-bg-hover: #FF8B38;
+
+		--key-bg: #E5E4E1;
+		--key-shadow: #A69D91;
+		--key-bg-hover: #FFFFFF;
+
+		--text-primary: #35352C;
+		--text-button: #35352C;
+		--text-secondary-button: #FFFFFF;
+		--text-equal-button: #FFFFFF;
+	}
+	:root.theme-3{
+		--main-bg: #160628;
+		--second-bg: #1D0934;
+		--screen-bg: #1D0934;
+
+		--key-clear-bg: #58077D;
+		--key-clear-shadow: #BC15F4;
+		--key-clear-bg-hover: #8631B0;
+
+		--key-equal-bg: #00E0D1;
+		--key-equal-shadow: #6CF9F2;
+		--key-equal-bg-hover: #94FFF9;
+
+		--key-bg: #341C4F;
+		--key-shadow: #871C9C;
+		--key-bg-hover: #6B34AC;
+
+		--text-primary: #FFE53D;
+		--text-button: #FFE53D;
+		--text-secondary-button: #FFFFFF;
+		--text-equal-button: #1B2428;
+	}
+body{
+	font-family: 'League Spartan';
+	font-size: 32px;
+	background-color: var(--main-bg);
+	color: var(--text-primary);
+}
+#theme-title{
+	font-size: 12px;
+}
+.theme-number{
+	font-size: 12px;
+}
+#theme-select{
+	-webkit-appearance: none;
+	border-radius: 1rem;
+	padding: .25rem;
+	background-color: var(--second-bg);
+	width: 100%;
+}
+#theme-select::-webkit-slider-thumb{
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 1rem;
+	background: var(--key-equal-bg);
+}
+#theme-select::-webkit-slider-thumb:hover{
+	background: var(--key-equal-bg-hover);
+}
+#display{
+	background-color: var(--screen-bg);
+}
+#keyboard{
+	background-color: var(--second-bg);
+}
+.commun-key{
+	background-color: var(--key-bg);
+	border-radius: .5rem;
+	box-shadow: inset 0px -3px 0px var(--key-shadow);
+}
+.commun-key:hover{
+	background-color: var(--key-bg-hover);
+}
+.commun-key .btn{
+	font-size: 32px;
+	color: var(--text-button);
+}
+.clear-key{
+	background-color: var(--key-clear-bg);
+	border-radius: .5rem;
+	box-shadow: inset 0px -3px 0px var(--key-clear-shadow);
+}
+.clear-key:hover{
+	background-color: var(--key-clear-bg-hover);
+}
+.clear-key .btn{
+	font-size: 32px;
+	color: var(--text-secondary-button);
+}
+#result-key{
+	background-color: var(--key-equal-bg);
+	border-radius: .5rem;
+	box-shadow: inset 0px -3px 0px var(--key-equal-shadow);
+}
+#result-key:hover{
+	background-color: var(--key-equal-bg-hover);
+}
+#result-key .btn{
+	font-size: 32px;
+	color: var(--text-equal-button);
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}

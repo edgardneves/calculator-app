@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+		<title>Frontend Mentor | Calculator app</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=League+Spartan:wght@700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row justify-content-center mb-3">
+				<div class="col-6 col-sm-4 col-md-4 col-lg-2 align-self-end mb-1">
+					<h3>calc</h3>
+				</div>
+				<div class="col-6 col-sm-4 col-md-4 col-lg-2">
+					<div class="row justify-content-end">
+						<div class="col-4 align-self-end">
+							<h6 id="theme-title" class="mb-1">THEME</h6>
+						</div>
+						<div class="col-6">
+							<div class="row px-2">
+								<div class="col-4 d-flex flex-column px-1 text-center">
+									<label class="form-label theme-number p-0 my-0" for="theme-select">1</label>
+								</div>
+								<div class="col-4 d-flex flex-column px-1 text-center">
+									<label class="form-label theme-number p-0 my-0" for="theme-select">2</label>
+								</div>
+								<div class="col-4 d-flex flex-column px-1 text-center">
+									<label class="form-label theme-number p-0 my-0" for="theme-select">3</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 d-flex flex-column">
+									<input type="range" name="theme-select" id="theme-select" min="1" max="3" value="1" onchange="changeTheme()">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center mb-3">
+				<div class="col-12 col-sm-8 col-md-8 col-lg-4 text-end rounded py-4 pe-2" id="display">
+					<label id="display-label"></label>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-8 col-md-8 col-lg-4 text-end rounded p-3" id="keyboard">
+					<div class="row text-center">
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(7)">7</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(8)">8</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(9)">9</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 clear-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonDelete()">DEL</button>
+							</div>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(4)">4</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(5)">5</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(6)">6</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonOperator('+')">+</button>
+							</div>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(1)">1</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(2)">2</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(3)">3</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonOperator('-')">-</button>
+							</div>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(',')">.</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonNumber(0)">0</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonOperator('/')">/</button>
+							</div>
+						</div>
+						<div class="col-3 px-2 py-2">
+							<div class="d-grid gap-1 commun-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonOperator('x')">x</button>
+							</div>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-6 px-2 py-2">
+							<div class="d-grid gap-1 clear-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonReset()">RESET</button>
+							</div>
+						</div>
+						<div class="col-6 px-2 py-2">
+							<div class="d-grid gap-1" id="result-key">
+								<button type="button" class="btn p-0 btn-number" onclick="buttonEqual()">=</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="attribution fixed-bottom">
+				Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+				Coded by <a href="https://github.com/edgardneves/">Edgard Neves</a>.
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script>
+			const displayLabel = document.getElementById("display-label");
+
+			var firstValue = 0;
+			var operator = "";
+
+			function display(n){
+				if(displayLabel.innerHTML.length <= 18){
+					displayLabel.innerHTML += Number(n);
+				}
+			}
+
+			function buttonNumber(input){
+				if(operator.length > 0){
+					displayLabel.innerHTML = "";
+				}
+
+				display(input);
+			}
+
+			function buttonOperator(op){
+				firstValue = displayLabel.innerHTML;
+				operator = op;
+
+				console.log(firstValue);
+				console.log(operator);
+			}
+
+			function buttonReset(){
+				firstValue = 0;
+				operator = "";
+
+				displayLabel.innerHTML = "";
+			}
+
+			function buttonEqual(){
+				let result = "";
+				let lastNumber = displayLabel.innerHTML;
+
+				if(operator === "+"){
+					result = Number(firstValue) + Number(lastNumber);
+				}else if(operator === "-"){
+					result = Number(firstValue) - Number(lastNumber);
+				}else if(operator === "/"){
+					if(Number(lastNumber) == 0){
+						alert("Division by ZERO.");
+					}else{
+						result = Number(firstValue) / Number(lastNumber);
+					}
+				}else if(operator === "x"){
+					result = Number(firstValue) * Number(lastNumber);
+				}else{
+					result = Number(lastNumber);
+				}
+
+				displayLabel.innerHTML = new Intl.NumberFormat("pt-br").format(result);
+				operator = "";
+			}
+
+			function buttonDelete(){
+				if(displayLabel.innerHTML.length != 0){
+					displayLabel.innerHTML = displayLabel.innerHTML.substring(0, displayLabel.innerHTML.length-1);
+				}
+			}
+
+			function changeTheme(){
+				let theme = document.getElementById("theme-select").value;
+
+				document.documentElement.className = "theme-"+theme;
+			}
+
+			window.addEventListener("keydown", (event) => {
+				if(event.key == "Enter"){
+					buttonEqual();
+				}
+				if(event.key == "Delete"){
+					buttonDelete();
+				}
+				if(event.key >= 0 && event.key <= 9){
+					buttonNumber(event.key);
+				}
+				if(event.key == "/" || event.key == "*" || event.key == "+" || event.key == "-"){
+					buttonOperator(event.key);
+				}
+			});
+		</script>
+	</body>
+</html>
