@@ -91,7 +91,13 @@ body{
 	border-radius: 1rem;
 	background: var(--key-equal-bg);
 }
-#theme-select::-webkit-slider-thumb:hover{
+#theme-select::-moz-range-thumb{
+	width: 15px;
+	height: 15px;
+	border-radius: 1rem;
+	background: var(--key-equal-bg);
+}
+#theme-select::-webkit-slider-thumb:hover, #theme-select::-moz-range-thumb:hover{
 	background: var(--key-equal-bg-hover);
 }
 #display{
